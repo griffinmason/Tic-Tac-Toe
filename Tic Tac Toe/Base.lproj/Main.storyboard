@@ -67,13 +67,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Qr-QeY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Qr-QeY">
                                 <rect key="frame" x="168" y="517" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Begin"/>
                                 <connections>
                                     <action selector="beginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aZF-Fg-wz2"/>
-                                    <segue destination="gP5-nJ-7xM" kind="show" id="IE0-3E-73a"/>
+                                    <segue destination="gP5-nJ-7xM" kind="show" identifier="navToInitialLoader" id="IE0-3E-73a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,8 +80,10 @@
                         <constraints>
                             <constraint firstItem="fwb-Cd-s1e" firstAttribute="centerX" secondItem="hLD-lO-7uE" secondAttribute="centerX" id="4l8-ij-pM9"/>
                             <constraint firstItem="Tjv-KJ-BJV" firstAttribute="trailing" secondItem="fwb-Cd-s1e" secondAttribute="trailing" id="8Id-gf-tDR"/>
+                            <constraint firstItem="5pZ-Qr-QeY" firstAttribute="centerX" secondItem="fwb-Cd-s1e" secondAttribute="centerX" id="MdX-8i-NC3"/>
                             <constraint firstItem="hLD-lO-7uE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sm9-ei-xh4"/>
                             <constraint firstItem="hLD-lO-7uE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="58" id="dhp-oY-cMZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5pZ-Qr-QeY" secondAttribute="bottom" constant="120" id="eWL-OE-2LZ"/>
                             <constraint firstItem="fwb-Cd-s1e" firstAttribute="top" secondItem="hLD-lO-7uE" secondAttribute="bottom" constant="25" id="fja-VU-HTl"/>
                             <constraint firstItem="Tjv-KJ-BJV" firstAttribute="top" secondItem="fwb-Cd-s1e" secondAttribute="bottom" constant="25" id="uQQ-yh-Qjq"/>
                         </constraints>
