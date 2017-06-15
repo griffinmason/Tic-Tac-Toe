@@ -79,14 +79,12 @@ class LaunchScreenViewController: UIViewController {
             id.setValue(labels)
             moves.setValue(post)
     }
-   /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "navToInitialLoader") {
             let destination: InitialLoadingViewController = segue.destination as! InitialLoadingViewController
             destination.gamename = gameName
         }
     }
-    */
 }
 
 
