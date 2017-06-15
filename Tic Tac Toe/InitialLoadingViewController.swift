@@ -28,10 +28,12 @@ class InitialLoadingViewController: UIViewController {
     }
     
     func checkingUpdates() {
-        let ref = Database.database().reference().child("Games").child(gamename!)
+        let ref = Database.database().reference().child("Games").child(gamename!).child("users")
         ref.observe(.childChanged, with: { snapshot in
             let title = snapshot
             print("The updated post title is \(title)")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "loader")
+            self.present(vc!, animated: true, completion: nil)
         })
     }
 

@@ -101,7 +101,7 @@
         <!--TIC TAC TOE-->
         <scene sceneID="sAF-Zm-aZ7">
             <objects>
-                <viewController id="gP5-nJ-7xM" customClass="InitialLoadingViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loader" id="gP5-nJ-7xM" customClass="InitialLoadingViewController" customModule="Tic_Tac_Toe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CFz-vg-jgV"/>
                         <viewControllerLayoutGuide type="bottom" id="GAg-UF-t8C"/>

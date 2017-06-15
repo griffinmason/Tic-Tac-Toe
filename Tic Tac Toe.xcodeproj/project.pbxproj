@@ -138,6 +138,7 @@
 				TargetAttributes = {
 					05A9F1161EEA953400D6320D = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = EBPVAUPGC3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -358,6 +359,7 @@
 			baseConfigurationReference = D3013D84154C9227EA7AB55C /* Pods-Tic Tac Toe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EBPVAUPGC3;
 				INFOPLIST_FILE = "Tic Tac Toe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MasonCreativeSolutions.Tic-Tac-Toe";
@@ -371,6 +373,7 @@
 			baseConfigurationReference = 06E4129B2702E879964FCC94 /* Pods-Tic Tac Toe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EBPVAUPGC3;
 				INFOPLIST_FILE = "Tic Tac Toe/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MasonCreativeSolutions.Tic-Tac-Toe";

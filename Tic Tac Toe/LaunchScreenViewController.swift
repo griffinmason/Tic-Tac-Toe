@@ -23,6 +23,7 @@ class LaunchScreenViewController: UIViewController {
     var check : DatabaseReference?
     var gameName : String?
     var portion: DatabaseReference?
+    var users: Int?
 
     
     
@@ -37,45 +38,27 @@ class LaunchScreenViewController: UIViewController {
     }
     
     @IBAction func beginButton(_ sender: UIButton) {
-        let gameName = gameNameLabel.text
+        self.users = 1
         if nameLabel.text != nil && gameNameLabel.text != nil {
-            print (gameName)
-            let portion =  Database.database().reference().child("Games")
-            portion.observeSingleEvent(of: .value, with: { snapshot in
-                print("is this working")
-                if snapshot.hasChild(gameName!) {
-                    print("Hello I exist")
-                    let check = portion.child(gameName!)
-                    check.updateChildValues(["users":2])
-                } else {
-                    print("Making new game")
-                    self.makeNewGame()
+            let portion = Database.database().reference().child("Games")
+            portion.observeSingleEvent(of: .value, with: { (snapshot) in
+                if snapshot.hasChild(self.gameNameLabel.text!) {
+                    portion.child(self.gameNameLabel.text!).child("users").observe(.value, with: { (snapshot) in
+                        let user = snapshot.value as! Int
+                        if user == 1 {
+                            print ("Updating user count")
+                            portion.child(self.gameNameLabel.text!).updateChildValues(["users": 2])
+                            self.users = 2
+                        }
+                    })
                 }
             })
-            /*Database.database().reference().child("Games").queryOrdered(byChild: "game_name").queryEqual(toValue: gameNameLabel.text).observe(.value, with: {
-                (snapshot) in
-                if snapshot.exists(){
-                    print("I exist")
-                    self.updateUsers()
-                    
-                } else {
-                    print("I don't exist yet")
-                    self.makeNewGame()
-                }
+            portion.removeAllObservers()
+            if self.users == 1 {
+                self.makeNewGame()
             }
-            )*/
         }
     }
-        //let check = Database.database().reference().child("Games").queryEqual(toValue: gameNameLabel.text, childKey: "game_name")
-        //check.updateChildValues(["playerTurn" : 2])
-        /*check.observe(.value, with: { (snapshot: DataSnapshot) in
-            for snap in snapshot.children {
-                print((snap as! DataSnapshot).key)
-            }
-        },
- */
-        //makeNewGame()
-
     
     func makeNewGame() {
         let ref = Database.database().reference()
